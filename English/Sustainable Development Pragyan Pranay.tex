@@ -1,0 +1,245 @@
+\documentclass[11pt]{scrartcl}
+\usepackage{enumitem}
+\usepackage{asymptote}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage[headsepline=:\the\textwidth,clines]{scrlayer-scrpage} %Header and footers
+\usepackage[many]{tcolorbox}
+\tcbuselibrary{theorems}
+\tcbuselibrary{skins}
+\usetikzlibrary{calc}
+\usepackage[compact]{titlesec}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,urlcolor=RubineRed,linkcolor=RoyalBlue,citecolor=ForestGreen}
+\usepackage{xcolor} 
+\usepackage{setspace}
+\usepackage{gensymb}
+\usepackage{etoolbox}
+\usepackage{lipsum}
+\usepackage[framemethod=TikZ]{mdframed}
+%\usepackage[left=1.2in,right=1.2in]{geometry}
+\usepackage{arcs}
+\usepackage{soul}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+\usepackage{cancel}
+%\usepackage{fontspec}
+\usepackage{fontawesome}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{braket}
+
+%Section(s) Style
+\titleformat{\section}{\sffamily\bfseries\LARGE}{\textsf{\textcolor{pro}{\S\,\LARGE\thesection}}}{0.5em}{}
+
+\titleformat{\subsection}{\sffamily\bfseries\Large}{\textcolor{pro} {\S \,\Large\thesubsection}}{0.5em}{}
+
+\titleformat{\subsubsection}{\sffamily\bfseries\Large}{\textcolor{pro}{\S \,\Large\thesubsubsection}}{0.5em}{}
+
+%Table of Contents
+\renewcommand{\cftpartfont}{\color{violet} \bfseries \sffamily \LARGE}
+\renewcommand{\cftsecfont}{\bfseries \sffamily \color{violet}}
+\renewcommand{\cftsubsecfont}{\color{violet}}
+\renewcommand{\cftsubsubsecfont}{\color{violet}}
+
+%ToC Page numbers
+\renewcommand{\cftsecpagefont}{\sffamily}
+\renewcommand{\cftpartpagefont}{\sffamily}
+\renewcommand{\cftsubsecpagefont}{\sffamily}
+\renewcommand{\cftsubsubsecpagefont}{\sffamily}
+
+%ToC Contents font
+%\renewcommand{\contentsname}{\bfseries \sffamily Contents}(Won't be required with Koma-Script)
+
+%Headers and Footers
+\ohead{}
+\chead{}
+\ihead{\normalfont{\textbf{Pragyan Pranay} (\today)}}
+%\cfoot{center}
+%\ofoot{page \thepage~of \totalpages}
+%\ifoot{Useless text at bottom}
+\setlength{\headheight}{14pt}
+
+%Colors
+\definecolor{pro}{HTML}{DE3163}
+\definecolor{dgreen}{HTML}{228B22}
+\definecolor{ForestGreen}{HTML}{002366}
+\definecolor{RubineRed}{HTML}{D10056}
+\definecolor{RoyalBlue}{HTML}{4169E1}
+\definecolor{DeepSkyBlue}{HTML}{1E90FF}
+\definecolor{Teal}{HTML}{008080}
+\definecolor{RebeccaPurple}{HTML}{663399}
+\definecolor{myblue}{RGB}{0,163,243}
+\definecolor{MidnightBlue}{HTML}{191970}
+\definecolor{nice}{HTML}{ff5b93}
+\definecolor{nice2}{HTML}{923fb5}
+\definecolor{nice3}{HTML}{c6c900}
+\definecolor{nice4}{HTML}{0ecfa8}
+\definecolor{maroon}{HTML}{800000}
+%\definecolor{}{}{}
+%\definecolor{}{}{}
+
+%Section Counter after every part
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
+
+%Theorem Environments
+\newtheoremstyle{prob}{}{}{\normalfont}{}{\bfseries}{\textbf{.}}{.5em}{}
+\theoremstyle{prob}
+\newtheorem{problem}{Problem}
+
+%Claim
+\newtheoremstyle{claim}{}{}{\normalfont}{}{\bfseries \sffamily}{\,\textbf{\tdg{---}}}{.5em}{#1 \thmnote{\tdg{#3}}}
+\theoremstyle{claim}
+\newtheorem*{claim}{\tdg{Claim}}
+
+%Remark
+\newtheoremstyle{rem}{}{}{\normalfont}{}{\bfseries \sffamily}{\textbf{.}}{.5em}{}
+\theoremstyle{rem}
+\newtheorem*{rem}{Remark}
+
+%Lemma
+\newtheoremstyle{lemma}{}{}{\normalfont}{}{\bfseries \sffamily}{\,\textbf{\textcolor{RebeccaPurple}{---}}}{.5em}{#1 \thmnote{\textcolor{RebeccaPurple}{#3}}}
+\theoremstyle{lemma}
+\newtheorem{lemma}{\textcolor{RebeccaPurple}{Lemma}}
+
+%Exercise
+\newtheoremstyle{exercise}{}{}{\normalfont}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{exercise}
+\newtheorem{exercise}{Exercise}[section]
+
+%Tcolorbox
+\tcolorboxenvironment{claim}{enhanced,left=5mm, colback=dgreen!10, boxrule=0pt, frame hidden, sharp corners, borderline west={0.7mm}{0pt}{dgreen}}
+
+\tcolorboxenvironment{exercise}{enhanced,left=5mm, colback=yellow!30, boxrule=0pt, frame hidden, sharp corners}
+
+\tcolorboxenvironment{rem}{enhanced,left=5mm, colback=black!10, boxrule=0pt, frame hidden, sharp corners, borderline west={0.7mm}{0pt}{black}}
+
+\tcolorboxenvironment{lemma}{enhanced,left=5mm, colback=RebeccaPurple!10, boxrule=0pt, frame hidden, sharp corners, borderline west={0.7mm}{0pt}{RebeccaPurple}}
+
+\newtcbtheorem{thm}{Theorem}%
+{enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
+    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=violet!100!white,
+    borderline={0.5mm}{0mm}{violet!15!},
+    borderline={0.5mm}{0mm}{violet!50!white},
+    attach boxed title to top left={yshift=-1.5mm},
+    boxed title style={boxrule=1pt}}{thm}
+
+\newtcbtheorem[auto counter,number within=section]{defi}{Definition}%
+{enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
+    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=orange!100!white,
+    borderline={0.5mm}{0mm}{orange!15!},
+    borderline={0.5mm}{0mm}{orange!50!white},
+    attach boxed title to top left={yshift=-1.8mm},
+    boxed title style={boxrule=1pt}}{thm}
+
+\newtcbtheorem[auto counter,number within=section]{notation}{Notation}%
+{enhanced,frame empty,interior empty,colframe=white, top=2.5mm,
+    coltitle=white,fonttitle=\bfseries \sffamily,colbacktitle=DeepSkyBlue!100!white,
+    borderline={0.5mm}{0mm}{DeepSkyBlue!20!},
+    borderline={0.5mm}{0mm}{DeepSkyBlue!50!white},
+    attach boxed title to top left={yshift=-1.8mm},
+    boxed title style={boxrule=1pt}}{thm}
+
+\newtcbtheorem[auto counter,number within=section]{prob}{\textbf{Problem}}%
+    {enhanced,frame empty,interior empty, sharp corners, colframe=magenta, top=1.5mm,separator sign none, coltitle=white,fonttitle=
+    \sffamily,colbacktitle=magenta!100!white,
+        borderline={0.5mm}{0mm}{magenta!15!},
+        borderline={0.5mm}{0mm}{magenta!100!white},
+        attach boxed title to top left={yshift=0mm},
+        boxed title style=sharp corners,
+    }{thm}
+
+%New Commands
+%Personal
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+
+\newcommand{\tdg}{\textcolor{dgreen}}
+\newcommand{\floor}[1]{\left\lfloor {#1} \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\ray}[1]{\overrightarrow{#1}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\seg}[1]{\overline{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\ts}{\textsuperscript}
+\newcommand{\tsub}{\textsubsscript}
+\newcommand{\ii}{\item}
+\newcommand{\tbsf}[1]{\textbf{\textsf{#1}}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\ord}[2]{\text{ord}_{#1}(#2)}
+\newcommand{\ang}{\angle}
+\newcommand{\dang}{\measuredangle}
+\newcommand{\dangle}{\measuredangle}
+\newcommand{\ntsf}[1]{\normalfont{\textsf{\textcolor{dgreen}{#1}}}}
+\newcommand*{\leaf}{\ensuremath{\text{\faLeaf}}}
+
+%Jugaad Environments
+\newenvironment{nthm}[1]
+{\begin{thm}{#1}d}{\end{thm}}
+
+\newenvironment{ndefi}[1]
+{\begin{defi}{#1}d}{\end{defi}}
+
+\newenvironment{sol}[1]
+{\vspace{0.2mm}
+\noindent \textit{Solution.} #1 $\blacksquare$}
+
+\newenvironment{mylist}
+{\begin{enumerate}[label=\textbf{\noindent Goal \arabic*:}]}
+{\end{enumerate}}
+
+\begin{document}
+
+\title{United Nations Sustainable Goals}
+\author{Pragyan Pranay}
+\maketitle
+
+{
+\hypersetup{hidelinks}
+\tableofcontents
+}
+\section{Introduction}
+Sustainable Development Goals, often abbreviated as the `SDGs' are a set of goals of 17 interlinked goals which are adopted by the United Nations in 2015 to end poverty by 2030 so that all people can enjoy peace and prosperity. 
+
+\section{What is Sustainable Development?}
+The very idea of sustainable development is quite beautiful. It relies on the saying ``We have not inherited this earth from our forefathers; we have borrowed it from our children." Evolution is necessary for survival which means it is not impossible to stop all the activities which harm our environment. But we can control it such that the damage is minimal and repairable. Generally speaking, sustainable development means to keep developing without extreme damage to the environment and utilising our resources very efficiently.
+
+\section{The 17 Sustainable Goals}
+United Nations (UN) founded on 24 October 1945 is an intergovernmental organisation aiming to preserve international peace and security. Recently in 2015, they launched the 17 Sustainable Development Goals that are often described as the ``Heart of UN". These goals solely focus on the growth and development of everyone without leaving anyone behind. The main goals here are:
+
+\begin{mylist}
+	\item No Poverty: End poverty in all its forms everywhere.
+	\item Zero Hunger: End hunger, achieve food security and improved nutrition and promote sustainable agriculture.
+	\item Good Health and Well-being: Ensure healthy lives and promote well-being for all at all ages.
+	\item Quality Education: Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
+	\item Gender Equality: Achieve gender equality and empower all women and girls.
+	\item Clean Water and Sanitation: Ensure availability and sustainable management of water and sanitation for all.
+	\item Affordable and Clean Energy: Ensure access to affordable, reliable, sustainable and modern energy for all.
+	\item Decent Work and Economic Growth: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all.
+	\item Industry, Innovation, and Infrastructure: Build resilient infrastructure, promote inclusive and sustainable industrialization, and foster innovation.
+	\item Reduced Inequality: Reduce inequality within and among countries.
+	\item Sustainable Cities and Communities: Make cities and human settlements inclusive, safe, resilient, and sustainable.
+	\item Responsible Consumption and Production: Ensure sustainable consumption and production patterns.
+	\item Climate Action: Take urgent action to combat climate change and its impacts.
+	\item Life Below Water: Conserve and sustainably use the oceans, seas, and marine resources for sustainable development.
+	\item Life on Land: Protect, restore, and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss.
+	\item Peace, Justice, and Strong Institutions: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable, and inclusive institutions at all levels.
+	\item Partnerships to Achieve the Goal: Strengthen the means of implementation and revitalize the global partnership for sustainable development.
+\end{mylist}
+
+\section{Conclusion}
+Launching Sustainable Development Goals by the United Nations is a wonderful measure that carries immense potential for public growth and development in all aspects without hampering the future. The SDGs can help focus efforts on the health and wellbeing of people that are the furthest behind. The resource burden for initial engagement with the SDGs is low. The people have also developed a keen understanding of this concept and contributing actively. It is still a long way, but we are reaching there.
+
+\end{document}
