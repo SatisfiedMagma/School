@@ -1,0 +1,143 @@
+{
+    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "editor.fontSize": 19,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.rulers": [60],
+    "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "-pdf",
+          "-pvc",
+          "-outdir=%OUTDIR%",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+          "-synctex=1",
+          "-interaction=nonstopmode",
+          "-file-line-error",
+          "%DOC%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "bibtex",
+        "command": "bibtex",
+        "args": [
+          "%DOCFILE%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "Makeglossaries",
+        "command": "makeglossaries",
+        "args": [
+          "%DOCFILE%"
+        ],
+        "env": {}
+      },
+      {
+        "name": "makeglossaries",
+        "command": "makeglossaries",
+        "args": [
+          "%DOCFILE%"
+        ]
+      }
+    ],
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "latexmk 🔃",
+        "tools": [
+          "latexmk"
+        ]
+      },
+      {
+        "name": "pdflatex ➞ bibtex ➞ pdflatex`×2",
+        "tools": [
+          "pdflatex",
+          "bibtex",
+          "pdflatex",
+          "pdflatex"
+        ]
+      },
+      {
+       "name": "Make glossaries",
+       "tools": [
+         "makeglossaries"
+       ]
+      }
+    ],
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "editor.mouseWheelZoom": true,
+    "workbench.editorAssociations": {
+      "*.pdf": "latex-workshop-pdf-hook"
+    },
+    "git.autofetch": true,
+    "workbench.editor.splitInGroupLayout": "vertical",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": true,
+    "cSpell.userWords": [
+      "Aops",
+      "APMO",
+      "BAMO",
+      "bhaiya",
+      "Brocard's",
+      "Ceva",
+      "Ceva's",
+      "Cevian",
+      "cevians",
+      "CGMO",
+      "circumcenter",
+      "circumcenters",
+      "circumcentre",
+      "circumcircle",
+      "circumcircles",
+      "CMIMC",
+      "concyclic",
+      "Debayu",
+      "EGMO",
+      "Excenter",
+      "fantabulous",
+      "Geogebra",
+      "homothetic",
+      "homothety",
+      "incenter",
+      "incenters",
+      "incentre",
+      "incircle",
+      "INMO",
+      "Leftside",
+      "Miquel",
+      "Monge's",
+      "noob",
+      "orthic",
+      "orthocenter",
+      "orthocenters",
+      "orthocentre",
+      "Pitot",
+      "Pitot's",
+      "Prithuj",
+      "Reim's",
+      "Rightside",
+      "Simson’s",
+      "USAJMO",
+      "Zeeshan"
+    ],
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": -1
+}
