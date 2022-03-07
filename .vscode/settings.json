@@ -16,7 +16,6 @@
           "-interaction=nonstopmode",
           "-file-line-error",
           "-pdf",
-          "-pvc",
           "-outdir=%OUTDIR%",
           "%DOC%"
         ],
@@ -80,7 +79,7 @@
        ]
       }
     ],
-    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoBuild.run": "never",
     "editor.mouseWheelZoom": true,
     "workbench.editorAssociations": {
       "*.pdf": "latex-workshop-pdf-hook"

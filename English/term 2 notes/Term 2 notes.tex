@@ -2,12 +2,18 @@
 \usepackage[left=1.1in,right=1.1in]{geometry}
 \usepackage{sprint}
 \usepackage[toc]{glossaries}
+\newglossary[alg]{amanda}{ald}{adn}{Glossary}
+\newglossary[blg]{animals}{bld}{bdn}{Glossary}
+
 
 \rhead{\textsf{ENGLISH NOTES}} %Rightside
 \lhead{\textbf{Pragyan Pranay}} %Leftside
 
 \makeglossaries
-\loadglsentries{Glossary.tex}
+
+\loadglsentries{Glossary amanda.tex}
+\loadglsentries{Glossary-Animals.tex}
+
 
 \begin{document}
     \title{English Term-2 Notes}
@@ -18,13 +24,13 @@
 \tableofcontents
 
 
-\part{Literature}
+\part{Poems}
 \section{Amanda}
 This poem is all about a child like me ranting about how 
 parents are always acting around boss and bullying us 
 every time about not studying and commanding and controlling 
 us in such a manner that we feel so irritated and lost that 
-we get the inspiration to write this poem.
+we get the inspiration to write this poem. 
 
 This poem is written by \textbf{Robin Klein} and has a total
 of 7 paragraphs or whatever. The paragraphs alter between 
@@ -89,5 +95,36 @@ stop \gls{sulking}. She said that the way she was behaving, people
 would think that Amanda was \gls{nagged} by her mother. Poor little 
 Amanda couldn't even say that it was indeed the case!
 
-\printglossaries 
+\printglossary[type=amanda]
+
+\section{Animals}
+This chapter is about a depressed guy who is too weak to live 
+in this world and says that he wants to live with animals, where 
+there is no competition, and everything is peaceful. He will 
+continuously say that animals are very good and they do not 
+complaint about their situations no matter what happens. He 
+feels very comfortable with those animals who stay as who they 
+are without acting and giving false impressions. This basically 
+means that he is fed up with life and wants to go to Himalayas 
+and leave all the false people in the world.
+
+\vspace{3mm}
+
+This poem is written by Walt Whitman who is said to be a very 
+nice and well-known poet. This poem is of about 4 paragraphs 
+where the last paragraph is short and concludes the poem. I 
+do oppose the poet at several points, but I do get how he feels.
+Let us begin.
+
+\vspace{4mm}
+
+\noindent \textbf{Paragraph 1:} He introduces us the notion 
+of living with animals and starts to appreciate them. He tells 
+everyone that animals are so \gls{placid} to live with. They are 
+also self contain'd which means that they are happy and never 
+interfere with other's life. He keeps gazing at those lovely 
+animals admiring the animals.
+
+\vspace{3mm}
+\printglossary[type=animals]
 \end{document}

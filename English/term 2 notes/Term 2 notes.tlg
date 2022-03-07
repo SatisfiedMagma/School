@@ -1,0 +1,10 @@
+This is makeindex, version 2.15 [TeX Live 2020] (kpathsea + Thai support).
+Scanning style file ./Term 2 notes.ist.............................done (29 attributes redefined, 0 ignored).
+Scanning input file Term 2 notes.tdn....
+!! Input index error (file = Term 2 notes.tdn, line = 2):
+   -- Unknown index keyword lossaryentry.
+done (8 entries accepted, 1 rejected).
+Sorting entries....done (26 comparisons).
+Generating output file Term 2 notes.tld....done (27 lines written, 0 warnings).
+Output written in Term 2 notes.tld.
+Transcript written in Term 2 notes.tlg.
